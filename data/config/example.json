@@ -1,0 +1,43 @@
+{
+  "paths": {
+    "input_pdf": "data/work/book.pdf",
+    "work_dir": "data/work",
+    "indices_dir": "data/indices",
+    "reports_dir": "data/reports"
+  },
+  "parse": {
+    "ocr_if_needed": false
+  },
+  "chunking": {
+    "target_chars": 1200,
+    "overlap": 120
+  },
+  "embeddings": {
+    "enabled": true,
+    "model_name": "sentence-transformers/all-MiniLM-L6-v2",
+    "device": "cpu"
+  },
+  "bm25": {
+    "enabled": true
+  },
+  "faiss": {
+    "enabled": false,
+    "metric": "ip"
+  },
+  "llm": {
+    "enabled": true,
+    "model": "meta-llama/Meta-Llama-3-8B-Instruct",
+    "base_url": "http://127.0.0.1:8000/v1",
+    "sectionize": true,
+    "chunk_hints": false,
+    "qa_pairs": true
+  },
+  "vectordb": {
+    "provider": "pinecone",
+    "api_key": "${PINECONE_API_KEY}",
+    "index_name": "book-index-demo",
+    "environment": "us-east-1",
+    "metric": "cosine",
+    "namespace": "default"
+  }
+}

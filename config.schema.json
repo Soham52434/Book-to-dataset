@@ -1,0 +1,104 @@
+{
+  "type": "object",
+  "properties": {
+    "paths": {
+      "type": "object",
+      "properties": {
+        "input_pdf": {
+          "type": "string"
+        },
+        "work_dir": {
+          "type": "string"
+        },
+        "indices_dir": {
+          "type": "string"
+        },
+        "reports_dir": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "input_pdf",
+        "work_dir",
+        "indices_dir",
+        "reports_dir"
+      ]
+    },
+    "parse": {
+      "type": "object",
+      "properties": {
+        "ocr_if_needed": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "ocr_if_needed"
+      ]
+    },
+    "chunking": {
+      "type": "object",
+      "properties": {
+        "target_chars": {
+          "type": "integer"
+        },
+        "overlap": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "target_chars",
+        "overlap"
+      ]
+    },
+    "embeddings": {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "model_name": {
+          "type": "string"
+        },
+        "device": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "enabled"
+      ]
+    },
+    "bm25": {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "enabled"
+      ]
+    },
+    "faiss": {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "metric": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "enabled"
+      ]
+    }
+  },
+  "required": [
+    "paths",
+    "parse",
+    "chunking",
+    "embeddings",
+    "bm25",
+    "faiss"
+  ]
+}
