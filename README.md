@@ -142,7 +142,3 @@ export PINECONE_API_KEY=YOUR_KEY
 
 	4.	Run the pipeline
 After embeddings are computed, chunks will be automatically upserted to Pinecone with metadata (section, page range, and text).
-
----
-
-Do you want me to also append a **folder tree diagram (`tree` output)** at the end of the README, so contributors know the exact project layout before running?
